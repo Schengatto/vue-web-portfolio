@@ -126,7 +126,7 @@ export const mentorship: PageSection = {
 
 export const projectPage: PageSection = {
     id: "projects",
-    title: "My personal projects",
+    title: "My projects",
     isPrintable: true,
     descriptions: [
         "This is a list of small side projects I worked on in my spare time while studying new technologies."
