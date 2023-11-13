@@ -5,13 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import {computed, PropType} from "vue";
+import type {PropType} from "vue";
+import {computed} from "vue";
 
 const props = defineProps({
   color: {
     type: String as PropType<"yellow" | "green" | "white">,
     required: false,
-    default: "white",
+    default: "green",
   },
 });
 
@@ -43,12 +44,23 @@ const colorClass = computed<string>(() => `tag--${props.color}`);
 }
 
 .tag--green {
-  color: #30B675;
-  border: 1px solid #C5E4CD;
+  color: var(--color-primary-text);
+  border: 1px solid var(--color-primary-text);
   padding: 6px 8px;
 
   svg {
     margin-right: 6px;
+  }
+}
+
+/* override styles when printing */
+@media print {
+  .tag {
+    border: none !important;
+    padding: 0 !important;
+    &:not(:last-child)::after {
+      content: ",";
+    }
   }
 }
 </style>

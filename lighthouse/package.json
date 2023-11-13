@@ -1,0 +1,16 @@
+{
+  "name": "lighthouse-report",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=18 <19",
+    "npm": ">=8 <10"
+  },
+  "scripts": {
+    "lighthouse": "lhci autorun"
+  },
+  "dependencies": {
+    "@lhci/cli": "0.12.0",
+    "puppeteer": "19.11.1"
+  }
+}

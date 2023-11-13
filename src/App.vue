@@ -1,29 +1,20 @@
 <script setup lang="ts">
-import {computed} from "vue";
-import {RouterView, useRoute} from 'vue-router'
-import PageHeader from "@/components/PageHeader/PageHeader.vue";
-import PageFooter from "@/components/PageFooter/PageFooter.vue";
+import {useHead} from "@vueuse/head";
+import {usePageStore} from "@/stores/page";
 
-const isHeaderVisible = computed<boolean>(() => {
-  const {path} = useRoute();
-  return path !== "/";
+const {userProfile: {name, role}} = usePageStore();
+
+useHead({
+  title: `${name} Portfolio`,
+  meta: [
+    {
+      name: `description`,
+      content: `${name} Portfolio | ${role}`,
+    },
+  ],
 });
 </script>
 
 <template>
-  <header id="app-header">
-    <PageHeader v-if="isHeaderVisible"/>
-  </header>
-  <main id="app-main">
-    <RouterView/>
-  </main>
-  <footer id="app-footer">
-    <PageFooter/>
-  </footer>
+  <RouterView/>
 </template>
-
-<style scoped>
-#app-main {
-  padding-top: 5em;
-}
-</style>

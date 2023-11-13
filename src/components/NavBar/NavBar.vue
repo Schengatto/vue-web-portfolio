@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import {RouterLink} from "vue-router";
 import {computed, ref} from "vue";
-import {pages} from "@/configurations/pages";
+import {usePageStore} from "@/stores/page";
+import {storeToRefs} from "pinia";
 
+const {userProfile, links} = storeToRefs(usePageStore());
 const isMenuVisible = ref<boolean>(false);
-
 const toggleMenu = () => isMenuVisible.value = !isMenuVisible.value;
 const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "");
-
 </script>
 
 <template>
@@ -24,17 +23,17 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
       </button>
     </div>
     <div class="page-header__navbar__logo">
-      <div class="title">Enrico Schintu</div>
-      <div class="subtitle">Freelancer Software Engineer</div>
+      <div class="title">{{ userProfile.name }}</div>
+      <div class="subtitle">{{ userProfile.role }}</div>
     </div>
     <div class="page-header__navbar__links">
-      <nav v-for="route in pages" :key="route.label">
-        <RouterLink :to="route.path">{{ route.label }}</RouterLink>
+      <nav v-for="(link, index) in links" :key="index">
+        <a :href="link.to">{{ link.label }}</a>
       </nav>
     </div>
     <div class="page-header__navbar__links-menu" v-if="isMenuVisible">
-      <div v-for="route in pages" :key="route.label">
-        <RouterLink :to="route.path" @click="toggleMenu">{{ route.label }}</RouterLink>
+      <div v-for="(link, index) in links" :key="index" @click="toggleMenu">
+        <a :href="link.to">{{ link.label }}</a>
       </div>
     </div>
   </div>
@@ -42,6 +41,7 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
 
 <style scoped lang="scss">
 .page-header__navbar {
+  z-index: 10;
   background-color: rgb(10, 10, 10);
   display: flex;
   position: fixed;
@@ -134,7 +134,7 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
   }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1024px) {
   .page-header__navbar__links {
     display: none;
   }
@@ -143,15 +143,15 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
   }
   .page-header__navbar__links-menu {
     position: fixed;
-    top: 3em;
+    top: 1.8em;
     display: flex;
     flex-direction: column;
     gap: 1em;
     background-color: #080b17;
     width: 100%;
-    padding: 1em;
+    padding: 2em 1em 1em 1em;
     height: 100%;
+    font-size: 24px !important;
   }
 }
-
 </style>

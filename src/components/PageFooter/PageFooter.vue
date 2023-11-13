@@ -1,20 +1,18 @@
 <script setup lang="ts">
 import AppIcon from "@/components/AppIcon/AppIcon.vue";
+import {usePageStore} from "@/stores/page";
+import {storeToRefs} from "pinia";
 
-const footerLinks = [
-  {url: "https://www.linkedin.com/in/enrico-schintu-schengatto/", icon: "Linkedin", label: "Linkedin"},
-  {url: "https://github.com/Schengatto", icon: "GitHub", label: "GitHub"},
-  {url: "https://gitlab.com/enrico.schintu", icon: "GitLab", label: "GitLab"}
-]
+const {userProfile} = storeToRefs(usePageStore());
 </script>
 
 <template>
   <div class="page-footer__navbar">
-    <div class="page-footer__link" v-for="link in footerLinks" :key="link.label">
+    <div class="page-footer__link" v-for="link in userProfile.externalLinks" :key="link.label">
       <div class="page-footer__link__icon">
         <AppIcon :name="link.icon" size="sm"></AppIcon>
       </div>
-      <a :href="link.url" target="_blank">{{ link.label}}</a>
+      <a :href="link.url" target="_blank">{{ link.label }}</a>
     </div>
   </div>
 </template>
