@@ -67,4 +67,12 @@ const visitLink = (link: string | undefined) => {
     margin: 0 0.5em;
   }
 }
+
+/* override styles when printing */
+@media print {
+  .item-title {
+    font-size: 24px !important;
+  }
+}
+
 </style>
