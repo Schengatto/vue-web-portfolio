@@ -64,6 +64,7 @@ onMounted(() => {
             <InputText label="Role" v-model="editableUserProfile.role" id="profile-role"/>
             <InputText label="Email" v-model="editableUserProfile.emailAddress" id="profile-email"/>
             <InputText label="Phone number" v-model="editableUserProfile.phoneNumber" id="profile-phone"/>
+            <InputText label="Telegram nickname" v-model="editableUserProfile.telegram" id="profile-phone"/>
             <InputText label="Picture URL" v-model="editableUserProfile.photoUrl" id="profile-photo"/>
             <InputText label="Formspree URL" v-model="profileInfo.emailEndpoint" id="profile-photo"/>
           </div>

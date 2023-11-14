@@ -12,6 +12,7 @@ export interface ProfileInfo {
     photoUrl: string;
     emailAddress: string;
     phoneNumber: string;
+    telegram: string;
     externalLinks: ExternalLink[];
     emailEndpoint: string;
 }

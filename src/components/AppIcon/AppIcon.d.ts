@@ -3,6 +3,8 @@ export enum IconNameKeys {
     GitLab,
     GitHub,
     Folder,
+    Telegram,
+    Gmail
 }
 
 export type IconName = keyof typeof IconNameKeys;

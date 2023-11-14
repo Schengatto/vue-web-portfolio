@@ -7,6 +7,7 @@ export const profileInfo: ProfileInfo = {
     photoUrl: "https://enricoschintu.altervista.org/myPhoto_mini.webp",
     emailAddress: "schintu.enrico@gmail.com",
     phoneNumber: "",
+    telegram: "schengatto",
     externalLinks: [
         {url: "https://www.linkedin.com/in/enrico-schintu-schengatto/", icon: "Linkedin", label: "Linkedin"},
         {url: "https://github.com/Schengatto", icon: "GitHub", label: "GitHub"},
