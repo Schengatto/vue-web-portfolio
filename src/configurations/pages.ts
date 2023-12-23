@@ -130,9 +130,16 @@ export const projectPage: PageSection = {
     title: "My projects",
     isPrintable: true,
     descriptions: [
-        "This is a list of small side projects I worked on in my spare time while studying new technologies."
+        "Quote Plus is a web application built on Next.js where the authenticated users can create and edit quotes of their own products."
     ],
     cardItems: [
+        {
+            title: "Xliff generator",
+            subtitle: "Web Application",
+            description: "A node tool that help in handle the translations in xliff format.",
+            tags: ["Next.js", "Typescript", "React"],
+            link: "https://github.com/Schengatto/quote-plus"
+        },
         {
             title: "Xliff generator",
             subtitle: "Web Application",
