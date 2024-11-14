@@ -1,13 +1,26 @@
 <script setup lang="ts">
-import {usePageStore} from "@/stores/page";
-import {storeToRefs} from "pinia";
+import { usePageStore } from "@/stores/page";
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
 
-const {userProfile, links} = storeToRefs(usePageStore());
+const { userProfile, links } = storeToRefs(usePageStore());
+
+onMounted(() => {
+  if (userProfile.value.photoUrl) {
+    const linkElement = document.createElement('link');
+    linkElement.rel = 'preload';
+    linkElement.as = 'image';
+    linkElement.href = userProfile.value.photoUrl;
+    document.head.appendChild(linkElement);
+  }
+});
 </script>
 
 <template>
   <div class="home-view">
     <div class="home-view__right">
+      <link v-if="userProfile.photoUrl" rel="preload" as="image" :href="userProfile.photoUrl">
+
       <div class="home-view__highlight">
         <div class="home-view__highlight__title">{{ userProfile.name }}</div>
         <div class="home-view__highlight__subtitle typewriter">{{ userProfile.role }}</div>
@@ -19,7 +32,7 @@ const {userProfile, links} = storeToRefs(usePageStore());
     </div>
 
     <div v-if="userProfile.photoUrl" class="home-view__picture">
-      <img :src="userProfile.photoUrl" alt="my-photo" class="my-photo">
+      <img :src="userProfile.photoUrl" alt="my-photo" class="my-photo" width="250" height="250">
     </div>
   </div>
 </template>
@@ -68,9 +81,12 @@ const {userProfile, links} = storeToRefs(usePageStore());
 }
 
 .my-photo {
-  height: 250px;
   border: 2px solid var(--color-primary-text);
   border-radius: 120px;
+  max-width: 100%;
+  max-height: 250px;
+  height: auto;
+  width: auto;
 }
 
 /** Mobile version **/
