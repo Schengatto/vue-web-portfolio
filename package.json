@@ -1,6 +1,6 @@
 {
   "name": "vue-web-portfolio",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "vite",
@@ -11,25 +11,25 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
-    "pinia": "2.1.7",
+    "pinia": "2.2.6",
     "@vueuse/head": "2.0.0",
-    "vue": "3.3.8",
-    "vue-router": "4.2.5"
+    "vue": "3.5.12",
+    "vue-router": "4.4.5"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "1.5.1",
-    "@tsconfig/node18": "18.2.2",
+    "@rushstack/eslint-patch": "1.10.4",
+    "@tsconfig/node18": "18.2.4",
     "@types/node": "18.18.9",
-    "@vitejs/plugin-vue": "4.4.1",
-    "@vitejs/plugin-vue-jsx": "3.0.2",
-    "@vue/eslint-config-typescript": "12.0.0",
-    "@vue/tsconfig": "0.4.0",
-    "eslint": "8.53.0",
-    "eslint-plugin-vue": "9.18.1",
-    "npm-run-all2": "6.1.1",
-    "sass": "1.69.5",
-    "typescript": "5.2.2",
-    "vite": "4.5.0",
-    "vue-tsc": "1.8.22"
+    "@vitejs/plugin-vue": "5.2.0",
+    "@vitejs/plugin-vue-jsx": "4.1.0",
+    "@vue/eslint-config-typescript": "14.0.0",
+    "@vue/tsconfig": "0.6.0",
+    "eslint": "9.14.0",
+    "eslint-plugin-vue": "9.31.0",
+    "npm-run-all2": "7.0.1",
+    "sass": "1.80.7",
+    "typescript": "5.6.3",
+    "vite": "5.4.11",
+    "vue-tsc": "2.1.10"
   }
 }

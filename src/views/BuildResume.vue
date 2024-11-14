@@ -6,6 +6,7 @@ import {useRouter} from "vue-router";
 import BaseCard from "@/components/BaseCard/BaseCard.vue";
 import InputText from "@/components/Form/InputText/InputText.vue";
 import {profileInfo} from "@/configurations/pages";
+import type { ProfileInfo } from "@/types/profile";
 
 const pageStore = usePageStore();
 const {sections, userProfile} = storeToRefs(pageStore);
@@ -13,15 +14,6 @@ const {sections, userProfile} = storeToRefs(pageStore);
 const editableUserProfile = ref<any>({...userProfile.value});
 const editableSections = ref<string>(JSON.stringify(sections.value, undefined, 2));
 const modelError = ref<unknown>("");
-
-// const userProfileModel = computed({
-//   get: (): string => {
-//     return editableUserProfile.value || JSON.stringify({...userProfile.value}, undefined, 2);
-//   },
-//   set: (value: string) => {
-//     editableUserProfile.value = value;
-//   },
-// });
 
 const sectionsModel = computed({
   get: (): string => {
@@ -35,10 +27,9 @@ const sectionsModel = computed({
 const router = useRouter();
 const applyChanges = () => {
   try {
-    // const editedUserProfile = JSON.parse(editableUserProfile.value);
     const editedSections = JSON.parse(editableSections.value);
     modelError.value = "";
-    pageStore.setUserProfile(editableUserProfile);
+    pageStore.setUserProfile(editableUserProfile as unknown as ProfileInfo);
     pageStore.setPageSections(editedSections || []);
     router.push({name: "MyPortfolio"})
   } catch (error) {
