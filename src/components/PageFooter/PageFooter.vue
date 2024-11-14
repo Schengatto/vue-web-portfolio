@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import AppIcon from "@/components/AppIcon/AppIcon.vue";
-import {usePageStore} from "@/stores/page";
-import {storeToRefs} from "pinia";
+import { usePageStore } from "@/stores/page";
+import { storeToRefs } from "pinia";
 
-const {userProfile} = storeToRefs(usePageStore());
+const { userProfile } = storeToRefs(usePageStore());
 </script>
 
 <template>
@@ -20,9 +20,13 @@ const {userProfile} = storeToRefs(usePageStore());
 <style scoped>
 .page-footer__navbar {
   display: flex;
-  position: fixed;
+  justify-content: center;
+  align-items: end;
+  justify-items: end;
+  position: absolute;
   bottom: 0;
   width: 100%;
+  max-width: 900px;
   gap: 2em;
   justify-content: end;
   padding: 1em;
@@ -43,5 +47,20 @@ a {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 16px;
+}
+
+@media (max-width: 1024px) {
+  .page-footer__navbar {
+    display: flex;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    gap: 2em;
+    justify-content: end;
+    padding: 1em;
+    color: #f2f2f2;
+    font-size: 10pt;
+  }
 }
 </style>

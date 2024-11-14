@@ -37,7 +37,7 @@ onMounted(() => {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .home-view {
   display: flex;
   align-content: center;
@@ -45,48 +45,52 @@ onMounted(() => {
   margin: 0 auto;
   max-width: 900px;
   gap: 1em;
-}
 
-.home-view__right {
-  display: flex;
-  flex-direction: column;
-  gap: 3em;
-}
+  .home-view__right {
+    min-height: 90vh;
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+  }
 
-.home-view__highlight {
-  font-weight: bold;
-  border-bottom: 1px solid var(--color-primary-text);
-}
+  .home-view__highlight {
+    font-weight: bold;
+    border-bottom: 1px solid var(--color-primary-text);
+  }
 
-.home-view__highlight__title {
-  font-size: 48px;
-}
+  .home-view__highlight__title {
+    font-size: 48px;
+  }
 
-.home-view__highlight__subtitle {
-  font-size: 38px;
-  font-variant: all-small-caps;
-}
+  .home-view__highlight__subtitle {
+    font-size: 38px;
+    font-variant: all-small-caps;
+  }
 
-.home-view__links {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
-  font-size: 30px
-}
+  .home-view__links {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    font-size: 30px
+  }
 
-.home-view__picture {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-}
+  .home-view__picture {
+    display: flex;
+    min-width: 250px;
+    flex-direction: column;
+    justify-content: start;
+    height: 250px;
+  }
 
-.my-photo {
-  border: 2px solid var(--color-primary-text);
-  border-radius: 120px;
-  max-width: 100%;
-  max-height: 250px;
-  height: auto;
-  width: auto;
+  .my-photo {
+    border: 2px solid var(--color-primary-text);
+    border-radius: 120px;
+    max-width: 250px;
+    max-height: 250px;
+    height: auto;
+    width: auto;
+  }
 }
 
 /** Mobile version **/
@@ -112,6 +116,8 @@ onMounted(() => {
       flex-direction: column;
       gap: 1.5em;
       white-space: normal !important;
+      width: 100%;
+      min-height: 0vh;
     }
 
     .home-view__links {
@@ -126,11 +132,12 @@ onMounted(() => {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
   }
 
   .my-photo {
-    max-height: 200px;
-    max-width: 200px;
+    max-height: 250px;
+    max-width: 250px;
     border-radius: 100px;
   }
 }
@@ -155,6 +162,10 @@ onMounted(() => {
 
   .home-view__highlight__subtitle {
     text-align: start !important;
+  }
+
+  .home-view__right {
+    width: 100%;
   }
 }
 </style>

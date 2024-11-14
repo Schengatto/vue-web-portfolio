@@ -4,7 +4,7 @@
     <input
         v-model="model"
         class="input-text__input"
-        type="text"
+        :type="type"
         :name="name"
         data-test="SearchBox__Input__searchTerm"
     />
@@ -22,6 +22,11 @@ const props = defineProps({
   id: {
     required: true,
     type: String,
+  },
+  type: {
+    required: false,
+    type: String,
+    default: "text",
   },
   label: {
     required: false,

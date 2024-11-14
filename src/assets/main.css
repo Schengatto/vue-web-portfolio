@@ -28,6 +28,10 @@ a, .green {
     cursor: pointer;
 }
 
+#app {
+    min-width: 300px;
+}
+
 /* override styles when printing */
 @media print {
     .paragraph-title {

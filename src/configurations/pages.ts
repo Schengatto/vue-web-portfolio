@@ -1,5 +1,5 @@
-import type {PageSection} from "@/types/page-info";
-import type {ProfileInfo} from "@/types/profile";
+import type { PageSection } from "@/types/page-info";
+import type { ProfileInfo } from "@/types/profile";
 
 export const profileInfo: ProfileInfo = {
     name: "Enrico Schintu",
@@ -9,9 +9,9 @@ export const profileInfo: ProfileInfo = {
     phoneNumber: "",
     telegram: "schengatto",
     externalLinks: [
-        {url: "https://www.linkedin.com/in/enrico-schintu-schengatto/", icon: "Linkedin", label: "Linkedin"},
-        {url: "https://github.com/Schengatto", icon: "GitHub", label: "GitHub"},
-        {url: "https://gitlab.com/enrico.schintu", icon: "GitLab", label: "GitLab"}
+        { url: "https://www.linkedin.com/in/enrico-schintu-schengatto/", icon: "Linkedin", label: "Linkedin" },
+        { url: "https://github.com/Schengatto", icon: "GitHub", label: "GitHub" },
+        { url: "https://gitlab.com/enrico.schintu", icon: "GitLab", label: "GitLab" }
     ],
     emailEndpoint: "https://formspree.io/f/xdorvobp" //get a free account at https://formspree.io/
 };
@@ -21,9 +21,10 @@ export const about: PageSection = {
     title: "About me",
     isPrintable: true,
     descriptions: [
-        "I'm passionate about developing software from every angle, covering both the backend and frontend, as well as development and analysis. I'm always eager to learn and research new technologies to stay up-to-date with the latest trends.",
-        "In addition to my professional interests, I'm also a gamer at heart and enjoy creating mini games for fun in my spare time.",
-        "I believe that the best developers are always curious and willing to explore new ideas and approaches, and I strive to embody this philosophy in my work.",
+        `As a full-stack developer, I thrive on crafting comprehensive software solutions that seamlessly integrate backend architecture with intuitive frontend experiences.`,
+        `My analytical mindset drives me to deeply understand problems before implementing elegant solutions. Staying at the forefront of technology isn't just a professional necessity for me it's a passion that fuels continuous learning and innovation.
+Gaming isn't just a hobby; it's a source of inspiration that naturally flows into my development work. Creating mini games in my spare time allows me to experiment with new technologies while maintaining that crucial element of fun in programming.`,
+        `I firmly believe that exceptional software development stems from boundless curiosity and the courage to explore unconventional solutions. This philosophy guides not just my code, but my approach to every technical challenge I encounter.`
     ],
 };
 
@@ -263,6 +264,6 @@ export const servicesPage: PageSection = {
 export const sections: PageSection[] = [about, experiences, toolbox, mentorship, projectPage];
 
 export const links = [
-    ...sections.map(section => ({label: section.title, to: `#${section.id}`})),
-    {label: "Get in touch", to: "#contact-me"}
+    ...sections.map(section => ({ label: section.title, to: `#${section.id}` })),
+    { label: "Get in touch", to: "#contact-me" }
 ];
