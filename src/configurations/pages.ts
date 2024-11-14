@@ -49,6 +49,12 @@ export const experiences: PageSection = {
             subtitle: "Senior Software Engineer",
             description: "Analysis and development of products oriented to the tourism business.",
             tags: ["Java", "Spring Framework", "C#", ".NET", "Typescript", "Node", "Vue", "Nuxt", "Jester", "Vitest", "Cypress", "Datadog", "Contentful", "AWS cloud", "Terraform", "Mentorship"],
+        },
+        {
+            title: "2024-... | Libre Capital",
+            subtitle: "Senior Software Engineer | Tech Lead",
+            description: "Development and technical team leadership for web2 side developments of the Libre Capital platform",
+            tags: ["Typescript", "Node", "Next.js", "Nest.js", "Cypress", "Synpress", "AWS cloud", "Web3 integration"],
         }
     ]
 };
@@ -133,6 +139,13 @@ export const projectPage: PageSection = {
         "This is a list of small side projects I worked on in my spare time while studying new technologies."
     ],
     cardItems: [
+        {
+            title: "Facile Forfettario",
+            subtitle: "Web Application",
+            description: "Website where I added useful tools for self-employed workers and financial management tools.",
+            tags: ["Nuxt.js", "Typescript", "Vue"],
+            link: "https://facile-forfettario.org"
+        },
         {
             title: "Quote Plus",
             subtitle: "Web Application",
