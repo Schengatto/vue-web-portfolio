@@ -21,7 +21,7 @@ const props = defineProps({
 
 const getComponent = () =>
     defineAsyncComponent(
-        () => import(`./Icons/${props.name}Icon.vue`)
+        () => import(`./icons/${props.name}Icon.vue`)
     );
 /* c8 ignore stop */
 
