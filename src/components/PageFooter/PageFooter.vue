@@ -8,11 +8,13 @@ const { userProfile } = storeToRefs(usePageStore());
 
 <template>
   <div class="page-footer__navbar">
-    <div class="page-footer__link" v-for="link in userProfile.externalLinks" :key="link.label">
-      <div class="page-footer__link__icon">
-        <AppIcon :name="link.icon" size="sm"></AppIcon>
+    <div class="page-footer__container">
+      <div class="page-footer__link" v-for="link in userProfile.externalLinks" :key="link.label">
+        <div class="page-footer__link__icon">
+          <AppIcon :name="link.icon" size="sm"></AppIcon>
+        </div>
+        <a :href="link.url" target="_blank">{{ link.label }}</a>
       </div>
-      <a :href="link.url" target="_blank">{{ link.label }}</a>
     </div>
   </div>
 </template>
@@ -21,21 +23,26 @@ const { userProfile } = storeToRefs(usePageStore());
 .page-footer__navbar {
   display: flex;
   justify-content: center;
-  align-items: end;
-  justify-items: end;
   position: absolute;
   bottom: 0;
   width: 100%;
-  max-width: 900px;
-  gap: 2em;
-  justify-content: end;
   padding: 1em;
   color: #f2f2f2;
+}
+
+.page-footer__container {
+  margin: auto;
+  display: flex;
+  gap: 2em;
 }
 
 a {
   color: white;
   font-variant: all-small-caps;
+}
+
+a:hover {
+  color: var(--color-primary-text);
 }
 
 .page-footer__link {
