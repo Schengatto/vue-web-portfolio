@@ -21,10 +21,10 @@ export const about: PageSection = {
     title: "About me",
     isPrintable: true,
     descriptions: [
-        `As a full-stack developer, I thrive on crafting comprehensive software solutions that seamlessly integrate backend architecture with intuitive frontend experiences.`,
-        `My analytical mindset drives me to deeply understand problems before implementing elegant solutions. Staying at the forefront of technology isn't just a professional necessity for me it's a passion that fuels continuous learning and innovation.
-Gaming isn't just a hobby; it's a source of inspiration that naturally flows into my development work. Creating mini games in my spare time allows me to experiment with new technologies while maintaining that crucial element of fun in programming.`,
-        `I firmly believe that exceptional software development stems from boundless curiosity and the courage to explore unconventional solutions. This philosophy guides not just my code, but my approach to every technical challenge I encounter.`
+        `As a full-stack developer, I architect and build end-to-end solutions that bridge robust backend systems with polished, responsive front-end interfaces. My expertise spans from database design and API development to creating intuitive user experiences with modern frameworks.`,
+        `With a background in computer science and a deep analytical mindset, I approach each project by first understanding its core challenges and constraints. This methodical approach, combined with my commitment to staying current with emerging technologies, enables me to deliver solutions that are both innovative and maintainable. I'm particularly passionate about cloud architecture, performance optimization, and implementing clean, scalable code patterns.`,
+        `My love for gaming transcends entertainment – it's a wellspring of technical inspiration that influences my development work. In my spare time, I develop game prototypes that serve as practical laboratories for testing new technologies, design patterns, and optimization techniques. This intersection of play and programming not only sharpens my problem-solving skills but also brings a creative dimension to my professional projects.`,
+        `I believe the best software emerges from a combination of technical excellence, creative problem-solving, and continuous experimentation. Whether I'm optimizing database queries, crafting responsive UIs, or architecting microservices, I approach each challenge with curiosity and a drive to discover elegant, efficient solutions that exceed expectations.`
     ],
 };
 
@@ -141,11 +141,11 @@ export const projectPage: PageSection = {
     ],
     cardItems: [
         {
-            title: "Facile Forfettario",
+            title: "Finance Toolbox",
             subtitle: "Web Application",
             description: "Website where I added useful tools for self-employed workers and financial management tools.",
             tags: ["Nuxt.js", "Typescript", "Vue"],
-            link: "https://facile-forfettario.org"
+            link: "https://finance-toolbox.it"
         },
         {
             title: "Quote Plus",
@@ -213,7 +213,7 @@ export const projectPage: PageSection = {
         {
             title: "Space invaders",
             subtitle: "Videogame for Windows",
-            description: "A clone of the famous flappy bird game.",
+            description: "The game maintains the classic Space Invaders essence but with a modern twist: each level is procedurally generated.",
             tags: ["Unity3D", "C#"],
             link: "https://enricoschintu.altervista.org/unity3D/Space-Invaders.zip"
         }
