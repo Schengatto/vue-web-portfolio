@@ -72,7 +72,8 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     gap: 1em;
-    font-size: 30px
+    font-size: 30px;
+    font-variant: all-small-caps;
   }
 
   .home-view__picture {

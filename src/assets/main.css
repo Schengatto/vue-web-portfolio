@@ -18,6 +18,7 @@ a, .green {
 
 .paragraph-title {
     border-bottom: 1px solid var(--color-primary-text);
+    font-variant: small-caps;
 }
 
 .paragraph-content {

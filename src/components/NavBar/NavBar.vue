@@ -68,6 +68,7 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
   gap: 2em;
   align-items: center;
   align-content: center;
+  font-variant: all-small-caps;
 
   nav {
     display: flex;
