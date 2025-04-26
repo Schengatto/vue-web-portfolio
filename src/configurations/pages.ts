@@ -22,9 +22,9 @@ export const about: PageSection = {
     isPrintable: true,
     descriptions: [
         `As a full-stack developer, I architect and build end-to-end solutions that bridge robust backend systems with polished, responsive front-end interfaces. My expertise spans from database design and API development to creating intuitive user experiences with modern frameworks.`,
-        `With a background in computer science and a deep analytical mindset, I approach each project by first understanding its core challenges and constraints. This methodical approach, combined with my commitment to staying current with emerging technologies, enables me to deliver solutions that are both innovative and maintainable. I'm particularly passionate about cloud architecture, performance optimization, and implementing clean, scalable code patterns.`,
-        `My love for gaming transcends entertainment – it's a wellspring of technical inspiration that influences my development work. In my spare time, I develop game prototypes that serve as practical laboratories for testing new technologies, design patterns, and optimization techniques. This intersection of play and programming not only sharpens my problem-solving skills but also brings a creative dimension to my professional projects.`,
-        `I believe the best software emerges from a combination of technical excellence, creative problem-solving, and continuous experimentation. Whether I'm optimizing database queries, crafting responsive UIs, or architecting microservices, I approach each challenge with curiosity and a drive to discover elegant, efficient solutions that exceed expectations.`
+        `With a background in computer science and a strong analytical mindset, I approach every project by first understanding its core challenges and constraints. This methodical approach, combined with my commitment to staying at the forefront of emerging technologies, allows me to deliver solutions that are both innovative and maintainable. I have a particular passion for cloud architecture, performance optimization, and implementing clean, scalable code patterns.`,
+        `My passion for gaming goes beyond entertainment — it’s a source of technical inspiration that deeply influences my work. In my spare time, I develop game prototypes as practical laboratories to explore new technologies, design patterns, and optimization techniques. This blend of play and programming sharpens my problem-solving skills and brings a creative dimension to my professional projects.`,
+        `I believe the best software emerges from the intersection of technical excellence, creative problem-solving, and continuous experimentation. Whether optimizing database queries, crafting seamless UIs, or architecting distributed systems, I approach every challenge with curiosity and a drive to deliver elegant, efficient solutions that exceed expectations.`
     ],
 };
 
@@ -54,7 +54,7 @@ export const experiences: PageSection = {
         {
             title: "2024-... | Libre Capital",
             subtitle: "Senior Software Engineer | Tech Lead",
-            description: "Development and technical team leadership for web2 side developments of the Libre Capital platform",
+            description: "Led development and technical teams for the frontend and backend components of the Libre Capital platform, overseeing architecture, implementation, and delivery of scalable, high-quality solutions.",
             tags: ["Typescript", "Node", "Next.js", "Nest.js", "Cypress", "Synpress", "AWS cloud", "Web3 integration"],
         }
     ]
@@ -70,34 +70,34 @@ export const toolbox: PageSection = {
     listItems: [
         {
             title: "Frontend",
-            subtitle: "Development of Frontend side like websites and web application",
-            description: "",
-            tags: ["HTML", "CSS", "Javascript", "Angular", "Typescript", "Vue", "React", "JQuery"],
+            subtitle: "Building responsive and dynamic web interfaces",
+            description: "Design and development of websites and web applications with a focus on performance, accessibility, and modern user experience.",
+            tags: ["HTML", "CSS", "JavaScript", "TypeScript", "Angular", "Vue", "React", "jQuery"]
         },
         {
             title: "Backend",
-            subtitle: "Development of Server side applications",
-            description: "",
-            tags: ["Java/Spring", "C#/.NET", "Javascript/Node/Express.js/Fastify/NestJs", "Python/Django", "PostgreSQL", "mySQL", "Elasticsearch"],
+            subtitle: "Server-side application development and database management",
+            description: "Designing and implementing robust, scalable backend architectures, APIs, and database systems to support complex applications.",
+            tags: ["Java/Spring", "C#/.NET", "Node.js/Express.js/Fastify/NestJS", "Python/Django", "PostgreSQL", "MySQL", "Elasticsearch"]
         },
         {
             title: "QA",
-            subtitle: "Quality assurance for software",
-            description: "",
-            tags: ["Cypress", "Cucumber", "Selenium", "pyTest"],
+            subtitle: "Ensuring software reliability and quality",
+            description: "Development and execution of automated and manual tests to ensure the delivery of high-quality, bug-free software.",
+            tags: ["Cypress", "Cucumber", "Selenium", "pytest"]
         },
         {
             title: "DevOps & CloudOps",
-            subtitle: "Cloud service configuration, log monitoring, infrastructure design",
-            description: "",
-            tags: ["GitHub pipelines", "GitLab pipelines", "Docker", "AWS Cloud", "ELK stack", "Nginx", "Apache", "Terraform", "Datadog"],
+            subtitle: "Cloud infrastructure management and CI/CD automation",
+            description: "Configuration of cloud services, monitoring systems, and deployment pipelines to ensure reliable, scalable, and efficient operations.",
+            tags: ["GitHub Actions", "GitLab CI/CD", "Docker", "AWS Cloud", "ELK Stack", "Nginx", "Apache", "Terraform", "Datadog"]
         },
         {
             title: "General",
-            subtitle: "Other useful tools for development",
-            description: "",
-            tags: ["Git", "VS Code", "Jira"],
-        },
+            subtitle: "Essential development tools and practices",
+            description: "Daily use of development tools and best practices for code management, collaboration, and agile project tracking.",
+            tags: ["Git", "VS Code", "Jira"]
+        }
     ]
 };
 
@@ -143,77 +143,77 @@ export const projectPage: PageSection = {
         {
             title: "Finance Toolbox",
             subtitle: "Web Application",
-            description: "Website where I added useful tools for self-employed workers and financial management tools.",
-            tags: ["Nuxt.js", "Typescript", "Vue"],
+            description: "A web platform offering financial management tools and resources tailored for self-employed professionals.",
+            tags: ["Nuxt.js", "TypeScript", "Vue"],
             link: "https://finance-toolbox.it"
         },
         {
             title: "Quote Plus",
             subtitle: "Web Application",
-            description: "Quote Plus is a web application built on Next.js where the authenticated users can create and edit quotes of their own products.",
-            tags: ["Next.js", "Typescript", "React"],
+            description: "A Next.js-based web app that enables authenticated users to create, manage, and edit product quotes with ease.",
+            tags: ["Next.js", "TypeScript", "React"],
             link: "https://github.com/Schengatto/quote-plus"
         },
         {
-            title: "Xliff generator",
+            title: "XLIFF Generator",
             subtitle: "Web Application",
-            description: "A node tool that help in handle the translations in xliff format.",
-            tags: ["Node"],
+            description: "A Node.js tool that simplifies handling and generating translation files in XLIFF format.",
+            tags: ["Node.js"],
             link: "https://github.com/Schengatto/translations-node"
         },
         {
-            title: "Update file dates",
+            title: "Update File Dates",
             subtitle: "Linux Script",
-            description: "This is a script for Linux that allows you to easily change the date of creation, the date of edit and the date of the last access of a specific file.",
+            description: "A Bash script for Linux that allows users to easily modify file creation, modification, and access dates.",
             tags: ["Bash", "Ubuntu"],
             link: "https://github.com/Schengatto/update-file-dates"
         },
         {
-            title: "Pdf page numbers",
+            title: "PDF Page Numbers",
             subtitle: "Linux Application",
-            description: "This is a script for Linux that allows you to easily add the page numbers into a pdf file.",
+            description: "A Python-based Linux tool that enables users to add page numbers to existing PDF documents effortlessly.",
             tags: ["Python", "Linux"],
             link: "https://github.com/Schengatto/update-file-dates"
         },
         {
-            title: "In developer shoes",
+            title: "In Developer Shoes",
             subtitle: "Web Application",
-            description: "An IT Company simulator built in Angular.",
+            description: "An IT company simulator built with Angular, offering insights into project management and development processes.",
             tags: ["Angular"],
             link: "https://enricoschintu.altervista.org/ids"
         },
         {
-            title: "Translation manager",
+            title: "Translation Manager",
             subtitle: "Web Application",
-            description: "Useful projects that help developers in managing i18n translations files in JSON format.",
+            description: "A tool designed to streamline the management of i18n translation files in JSON format for multilingual applications.",
             tags: ["Angular"],
             link: "https://enricoschintu.altervista.org/translation-manager"
         },
         {
-            title: "Task manager",
+            title: "Task Manager",
             subtitle: "Web Application",
-            description: "A simple task manager created in Angular.",
+            description: "A simple and intuitive task management application developed using Angular.",
             tags: ["Angular"],
             link: "https://enricoschintu.altervista.org/task-manager/"
         },
         {
             title: "Mahjong",
-            subtitle: "Videogame for Windows",
-            description: "My version of the classical mahjong game.",
+            subtitle: "Windows Video Game",
+            description: "A personal take on the classic Mahjong game, built with Unity3D for Windows platforms.",
             tags: ["Unity3D", "C#"],
             link: "https://enricoschintu.altervista.org/unity3D/Mahjong.zip"
         },
         {
-            title: "Kaka bird",
-            subtitle: "Videogame for Windows",
-            description: "A clone of the famous flappy bird game.",
+            title: "Kaka Bird",
+            subtitle: "Windows Video Game",
+            description: "A Unity3D clone of the iconic Flappy Bird game, featuring challenging gameplay and fun mechanics.",
             tags: ["Unity3D", "C#"],
             link: "https://enricoschintu.altervista.org/unity3D/Kaka-Bird.zip"
         },
         {
-            title: "Space invaders",
-            subtitle: "Videogame for Windows",
-            description: "The game maintains the classic Space Invaders essence but with a modern twist: each level is procedurally generated.",
+            title: "Space Invaders",
+            subtitle: "Windows Video Game",
+            description: "A modern reimagining of the classic Space Invaders, with procedurally generated levels to enhance replayability.",
             tags: ["Unity3D", "C#"],
             link: "https://enricoschintu.altervista.org/unity3D/Space-Invaders.zip"
         }
@@ -225,39 +225,43 @@ export const servicesPage: PageSection = {
     title: "What I offer",
     isPrintable: true,
     descriptions: [
-        " Here is the list of services I offer under contract."
+        "A comprehensive range of services available for contract work, combining technical expertise with practical, scalable solutions."
     ],
     listItems: [
         {
             title: "Frontend",
-            subtitle: "Development of Frontend side applications",
-            description: "",
-            tags: ["Angular", "Vue", "React", "Typescript", "Javascript", "JQuery"],
+            subtitle: "Development of frontend applications",
+            description: "Building responsive, dynamic, and user-friendly web applications using modern frameworks and best practices to deliver high-quality user experiences.",
+            tags: ["Angular", "Vue", "React", "TypeScript", "JavaScript", "jQuery"]
         },
         {
             title: "Backend",
-            subtitle: "Development of Backend side applications",
-            description: "",
-            tags: ["Java/Spring", "C#/.NET", "Javascript/Node/Express.js/Fastify/NestJs", "Python/Django"],
+            subtitle: "Development of backend applications",
+            description: "Designing and developing robust, secure, and scalable server-side applications, APIs, and microservices architectures tailored to business needs.",
+            tags: ["Java/Spring", "C#/.NET", "JavaScript/Node/Express.js/Fastify/NestJS", "Python/Django"]
         },
         {
             title: "QA",
-            subtitle: "Quality assurance for software",
-            description: "",
-            tags: ["Cypress", "Cucumber", "Selenium", "pyTest"],
+            subtitle: "Software quality assurance",
+            description: "Implementing comprehensive testing strategies, both manual and automated, to ensure software reliability, performance, and user satisfaction.",
+            tags: ["Cypress", "Cucumber", "Selenium", "pytest"]
         },
         {
             title: "CloudOps",
-            subtitle: "Cloud service configuration, log monitoring, infrastructure design",
-            description: "",
-            tags: ["AWS Cloud", "ELK stack", "Nginx", "Apache", "Terraform", "Datadog"],
+            subtitle: "Cloud services and infrastructure management",
+            description: "Setting up, optimizing, and maintaining cloud infrastructures, monitoring systems, and deployment pipelines to ensure reliability and scalability.",
+            tags: ["AWS Cloud", "ELK Stack", "Nginx", "Apache", "Terraform", "Datadog"]
         },
         {
             title: "Mentorship",
-            subtitle: "Training courses to train your staff",
-            description: "",
-            tags: ["Java", "Spring Framework", "C#", ".NET", "Typescript", "Node", "Angular", "React", "Vue", "Nuxt", "Jester", "Vitest", "Cypress", "Datadog", "Contentful", "AWS cloud", "Terraform", "Mentorship"],
-        },
+            subtitle: "Technical training and mentorship",
+            description: "Delivering tailored training sessions, workshops, and mentorship programs to upskill your team in modern development technologies, cloud solutions, and best practices.",
+            tags: [
+                "Java", "Spring Framework", "C#", ".NET", "TypeScript", "Node.js",
+                "Angular", "React", "Vue", "Nuxt", "Jest", "Vitest", "Cypress",
+                "Datadog", "Contentful", "AWS Cloud", "Terraform", "Mentorship"
+            ]
+        }
     ]
 };
 
