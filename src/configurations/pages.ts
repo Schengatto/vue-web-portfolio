@@ -144,7 +144,7 @@ export const projectPage: PageSection = {
             title: "Value Investing Analytics",
             subtitle: "Web Application",
             description: "A personal project that analyzes over 400 companies based on value investing principles. An AI system is used to refine and enhance the data analysis process.",
-            tags: ["finance", "Javascript", "Express.js", "AI"],
+            tags: ["Finance", "Express.js", "AI"],
             link: "http://www.schengatto.cloud"
         },
         {
