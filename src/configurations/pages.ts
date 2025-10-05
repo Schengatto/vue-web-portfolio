@@ -140,6 +140,13 @@ export const projectPage: PageSection = {
         "This is a list of small side projects I worked on in my spare time while studying new technologies."
     ],
     cardItems: [
+          {
+            title: "Value Investing Analytics",
+            subtitle: "Web Application",
+            description: "A personal project that analyzes over 400 companies based on value investing principles. An AI system is used to refine and enhance the data analysis process.",
+            tags: ["finance", "Javascript", "Express.js", "AI"],
+            link: "http://www.schengatto.cloud"
+        },
         {
             title: "Finance Toolbox",
             subtitle: "Web Application",
