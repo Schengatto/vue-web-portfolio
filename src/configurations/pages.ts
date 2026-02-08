@@ -140,7 +140,21 @@ export const projectPage: PageSection = {
         "This is a list of small side projects I worked on in my spare time while studying new technologies."
     ],
     cardItems: [
-          {
+        {
+            title: "Libre Tube",
+            subtitle: "Free Youtube Player",
+            description: "A Progressive Web App that lets users search and play YouTube videos without any advertising interruptions, with the ability to manage a personalized list of favorite channels.",
+            tags: ["Youtube", "Vue 3"],
+            link: "https://libre-tube.netlify.app/"
+        },
+        {
+            title: "Gazzetta dei Mercati",
+            subtitle: "Online Newspaper",
+            description: "An experimental project built with n8n that processes hundreds of RSS feeds daily, using AI to generate a financial journal where news is classified as positive, negative, or neutral, with potential market impact.",
+            tags: ["Finance", "AI", "N8N"],
+            link: "https://enricoschintu.altervista.org/trading/newspaper.html"
+        },
+        {
             title: "Value Investing Analytics",
             subtitle: "Web Application",
             description: "A personal project that analyzes over 400 companies based on value investing principles. An AI system is used to refine and enhance the data analysis process.",
