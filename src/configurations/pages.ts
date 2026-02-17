@@ -151,8 +151,8 @@ export const projectPage: PageSection = {
             title: "Gazzetta dei Mercati",
             subtitle: "Online Newspaper",
             description: "An experimental project built with n8n that processes hundreds of RSS feeds daily, using AI to generate a financial journal where news is classified as positive, negative, or neutral, with potential market impact.",
-            tags: ["Finance", "AI", "N8N"],
-            link: "https://enricoschintu.altervista.org/trading/newspaper.html"
+            tags: ["Finance", "AI", "N8N", "Nuxt"],
+            link: "https://financial-newspaper.netlify.app"
         },
         {
             title: "Value Investing Analytics",
