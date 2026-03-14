@@ -4,7 +4,7 @@ import type { ProfileInfo } from "@/types/profile";
 export const profileInfo: ProfileInfo = {
     name: "Enrico Schintu",
     role: "Freelance Software Engineer",
-    photoUrl: "http://enricoschintu.altervista.org/pic.png",
+    photoUrl: "https://enricoschintu.altervista.org/altro/pic.png",
     emailAddress: "schintu.enrico@gmail.com",
     phoneNumber: "",
     telegram: "schengatto",
