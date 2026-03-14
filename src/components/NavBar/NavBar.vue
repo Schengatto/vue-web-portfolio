@@ -10,149 +10,220 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
 </script>
 
 <template>
-  <div class="page-header__navbar">
-    <div class="page-header__navbar__toggle-menu">
-      <button
-          ref="menuToggle"
-          :class="['menu-toggle', isOpenClass]"
-          @click.prevent="toggleMenu"
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-    <div class="page-header__navbar__logo">
-      <div class="title">{{ userProfile.name }}</div>
-      <div class="subtitle">{{ userProfile.role }}</div>
-    </div>
-    <div class="page-header__navbar__links">
-      <nav v-for="(link, index) in links" :key="index">
-        <a :href="link.to">{{ link.label }}</a>
+  <div class="navbar">
+    <div class="navbar__inner">
+      <div class="navbar__toggle">
+        <button
+            ref="menuToggle"
+            :class="['menu-toggle', isOpenClass]"
+            @click.prevent="toggleMenu"
+            aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="navbar__logo">
+        <a href="#" class="navbar__logo-link">
+          <span class="navbar__name">{{ userProfile.name }}</span>
+          <span class="navbar__role">{{ userProfile.role }}</span>
+        </a>
+      </div>
+      <nav class="navbar__links">
+        <a v-for="(link, index) in links" :key="index" :href="link.to" class="navbar__link">
+          {{ link.label }}
+        </a>
       </nav>
     </div>
-    <div class="page-header__navbar__links-menu" v-if="isMenuVisible">
-      <div v-for="(link, index) in links" :key="index" @click="toggleMenu">
-        <a :href="link.to">{{ link.label }}</a>
+
+    <Transition name="menu-slide">
+      <div class="navbar__mobile-menu" v-if="isMenuVisible">
+        <a v-for="(link, index) in links"
+           :key="index"
+           :href="link.to"
+           class="navbar__mobile-link"
+           @click="toggleMenu"
+        >
+          {{ link.label }}
+        </a>
       </div>
-    </div>
+    </Transition>
   </div>
 </template>
 
 <style scoped lang="scss">
-.page-header__navbar {
-  z-index: 10;
-  background-color: rgb(10, 10, 10);
-  display: flex;
+.navbar {
+  z-index: 100;
   position: fixed;
+  top: 0;
   width: 100%;
-  gap: 1em;
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2em;
+    height: 60px;
+    gap: 2em;
+  }
 
   &__logo {
+    flex-shrink: 0;
+  }
+
+  &__logo-link {
     display: flex;
     flex-direction: column;
-    margin: 0.5em 1em;
-
-    .title {
-      font-size: 14px;
-    }
-
-    .subtitle {
-      font-size: 12px;
-    }
+    text-decoration: none;
+    gap: 2px;
   }
-}
 
-.page-header__navbar__links {
-  display: flex;
-  gap: 2em;
-  align-items: center;
-  align-content: center;
-  font-variant: all-small-caps;
+  &__name {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: 0.02em;
+  }
 
-  nav {
+  &__role {
+    font-size: 11px;
+    color: var(--color-text-muted);
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  &__links {
     display: flex;
-    gap: 2em;
+    gap: 1.5em;
     align-items: center;
-    align-content: center;
-    justify-content: center;
+    margin-left: auto;
+  }
+
+  &__link {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white-a60);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--color-primary-text);
+    }
+  }
+
+  &__toggle {
+    display: none;
+  }
+
+  &__mobile-menu {
+    display: none;
   }
 }
 
-.page-header__navbar__toggle-menu {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  margin: auto 0.5em;
+.menu-toggle {
+  position: relative;
+  border: none;
+  box-shadow: none;
+  padding: 8px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
 
-  .menu-toggle {
-    position: relative;
-    border: none;
-    box-shadow: none;
-    padding: 0;
-    margin: 0;
-    background: white;
-    cursor: pointer;
-    top: 2px;
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-bottom: 4px;
+    background: var(--white-a80);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
 
-    span {
-      display: block;
-      width: 22px;
-      height: 2px;
-      margin-bottom: 5px;
-      position: relative;
-      background: #1b115c;
-      border-radius: 3px;
-      z-index: 1;
-      transform-origin: 4px 0px;
-      transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-      background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-
-      &:first-child {
-        transform-origin: 0% 0%;
-      }
-
-      &:first-child {
-        transform-origin: 0% 100%;
-      }
-    }
-
-    &.is-open {
-      span {
-        opacity: 1;
-        transform: rotate(45deg) translate(-4px, -9px);
-      }
-
-      span:nth-last-child(3) {
-        opacity: 0;
-        transform: rotate(0deg) scale(0.2, 0.2);
-      }
-
-      span:nth-last-child(2) {
-        transform: rotate(-45deg) translate(-4px, 7px);
-      }
+    &:last-child {
+      margin-bottom: 0;
     }
   }
+
+  &.is-open {
+    span:first-child {
+      transform: rotate(45deg) translate(4px, 4px);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+
+    span:last-child {
+      transform: rotate(-45deg) translate(4px, -4px);
+    }
+  }
+}
+
+/* Menu slide transition */
+.menu-slide-enter-active,
+.menu-slide-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-slide-enter-from,
+.menu-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 
 @media (max-width: 1024px) {
-  .page-header__navbar__links {
-    display: none;
-  }
-  .page-header__navbar__toggle-menu {
-    display: flex;
-  }
-  .page-header__navbar__links-menu {
-    position: fixed;
-    top: 1.8em;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-    background-color: #080b17;
-    width: 100%;
-    padding: 2em 1em 1em 1em;
-    height: 100%;
-    font-size: 24px !important;
+  .navbar {
+    &__inner {
+      padding: 0 1em;
+    }
+
+    &__links {
+      display: none;
+    }
+
+    &__toggle {
+      display: flex;
+      align-items: center;
+    }
+
+    &__mobile-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: rgba(10, 10, 15, 0.95);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 0.5em 1.5em 1.5em;
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 60px);
+    }
+
+    &__mobile-link {
+      display: block;
+      padding: 1em 0;
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--white-a80);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: var(--color-primary-text);
+      }
+    }
   }
 }
 </style>

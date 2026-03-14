@@ -1,12 +1,15 @@
-/* color palette from <https://github.com/vuejs/theme> */
+/* Modern portfolio design system */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 :root {
+    /* Core palette */
     --vt-c-white: #ffffff;
     --vt-c-white-soft: #f8f8f8;
     --vt-c-white-mute: #f2f2f2;
 
-    --vt-c-black: #181818;
-    --vt-c-black-soft: #222222;
-    --vt-c-black-mute: #282828;
+    --vt-c-black: #0a0a0f;
+    --vt-c-black-soft: #12121a;
+    --vt-c-black-mute: #1a1a24;
 
     --vt-c-indigo: #2c3e50;
 
@@ -18,8 +21,9 @@
     --vt-c-text-light-1: var(--vt-c-indigo);
     --vt-c-text-light-2: rgba(60, 60, 60, 0.66);
     --vt-c-text-dark-1: var(--vt-c-white);
-    --vt-c-text-dark-2: rgb(255, 255, 255);
+    --vt-c-text-dark-2: rgba(255, 255, 255, 0.87);
 
+    /* Spacing scale */
     --space-unit: 8px;
     --space-xxxxs: calc(var(--space-unit) * 0.25);
     --space-xxxs: calc(var(--space-unit) * 0.5);
@@ -35,6 +39,7 @@
     --space-xxxl: calc(var(--space-unit) * 7);
     --space-xxxxl: calc(var(--space-unit) * 8);
 
+    /* Typography scale */
     --text-xxxl: 48px;
     --text-xxl: 32px;
     --text-xl: 26px;
@@ -42,6 +47,7 @@
     --text-md: 18px;
     --text-sm: 16px;
     --text-xs: 14px;
+    --text-xxs: 12px;
 
     --text-height-xl: 48px;
     --text-height-lg: 32px;
@@ -49,20 +55,27 @@
     --text-height-smmd: 20px;
     --text-height-sm: 16px;
 
+    /* Border radius */
     --radius-lg: 24px;
     --radius-md: 16px;
     --radius-sm: 8px;
+    --radius-xs: 4px;
 
-    /* Breakpoints screens */
+    /* Breakpoints */
     --screen-mobile: 320px;
     --screen-desktop-sm: 1024px;
     --screen-desktop: 1440px;
+
+    /* Fonts */
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 }
 
-/* semantic color variables for this project */
+/* Semantic colors */
 :root {
     --white: rgb(255, 255, 255);
-    --white-a60: rgba(255, 255, 255, 0.7);
+    --white-a60: rgba(255, 255, 255, 0.6);
+    --white-a80: rgba(255, 255, 255, 0.8);
     --white-a92: rgba(255, 255, 255, 0.92);
 
     --color-background: var(--vt-c-white);
@@ -75,8 +88,15 @@
     --color-heading: var(--vt-c-text-light-1);
 
     --color-text: var(--vt-c-text-dark-2);
+    --color-text-muted: rgba(255, 255, 255, 0.5);
     --color-primary-text: hsl(160, 87%, 47%);
+    --color-primary-glow: hsla(160, 87%, 47%, 0.15);
     --color-highlight: hsl(41, 100%, 61%);
+
+    /* Glass effect */
+    --glass-bg: rgba(255, 255, 255, 0.04);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-bg-hover: rgba(255, 255, 255, 0.08);
 
     --section-gap: 160px;
 }
@@ -95,49 +115,7 @@
     }
 }
 
-.button {
-    padding: 0.5em;
-    color: var(--color-primary-text);
-    border-color: var(--color-primary-text);
-    cursor: pointer;
-    background-color: transparent;
-
-    &:hover {
-        border-color: hsl(41, 100%, 61%);
-        color: hsl(41, 100%, 61%)
-    }
-}
-
-.typewriter {
-    overflow: hidden; /* Ensures the content is not revealed until the animation */
-    border-right: .05em solid #fafafa; /* The typwriter cursor */
-    white-space: nowrap; /* Keeps the content on a single line */
-    /*margin: 0 auto; !* Gives that scrolling effect as the typing happens *!*/
-    letter-spacing: .15em; /* Adjust as needed */
-    animation: typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
-}
-
-/* The typing effect */
-@keyframes typing {
-    from {
-        width: 0
-    }
-    to {
-        width: 100%
-    }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent
-    }
-    50% {
-        border-color: #fafafa;
-    }
-}
-
+/* Global resets */
 *,
 *::before,
 *::after {
@@ -146,21 +124,91 @@
     font-weight: normal;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
     color: var(--color-text);
-    background: radial-gradient(circle, rgb(42, 41, 41) 0%, rgb(41, 41, 42) 55%, rgb(10, 10, 10) 100%);
-
-    font-size: 24px;
+    background: var(--vt-c-black);
+    background-image:
+        radial-gradient(ellipse at 20% 50%, hsla(160, 87%, 47%, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, hsla(220, 60%, 50%, 0.04) 0%, transparent 50%);
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.7;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
+/* Button base */
+.button {
+    padding: 0.75em 1.5em;
+    color: var(--color-primary-text);
+    border: 1px solid var(--color-primary-text);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background-color: transparent;
+    font-family: var(--font-sans);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-primary-glow);
+        border-color: var(--color-primary-text);
+        color: var(--color-primary-text);
+        box-shadow: 0 0 20px hsla(160, 87%, 47%, 0.15);
+    }
+}
+
+/* Typewriter animation */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid var(--color-primary-text);
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+    line-height: 1.2;
+    animation: typing 3s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--color-primary-text) }
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Utility classes */
 .d-flex {
     display: flex;
 }
 
+/* Page container */
 .page {
     display: block;
     max-width: 900px;
@@ -176,8 +224,7 @@ body {
 /* Mobile */
 @media (max-width: 1024px) {
     body {
-        background: rgba(47, 47, 48, 1);
-        font-size: 20px;
+        font-size: 15px;
     }
 
     .page {
@@ -189,29 +236,57 @@ body {
         overflow: visible !important;
         border-right: none !important;
         white-space: normal;
-        animation:none !important;
+        animation: none !important;
         blink-caret: none;
     }
 }
 
-/* override styles when printing */
+/* Print styles */
 @media print {
+    :root {
+        --color-primary-text: #1a1a2e;
+        --white: #000;
+        --white-a60: #333;
+        --white-a80: #222;
+        --white-a92: #111;
+        --color-text-muted: #555;
+    }
+
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    @page {
+        margin: 1.5cm;
+        size: A4;
+    }
+
     body {
         margin: 0;
         color: #000;
-        background-color: #fff;
-        font-size: 18px;
+        background: #fff !important;
+        background-image: none !important;
+        font-size: 11px;
+        font-family: var(--font-sans);
+        line-height: 1.5;
     }
 
     header {
-        display: none;
+        display: none !important;
     }
 
     footer {
-        display: none;
+        display: none !important;
     }
 
     .no-print {
+        display: none !important;
+    }
+
+    /* Hide sections not needed in CV */
+    #mentorship,
+    #projects {
         display: none !important;
     }
 
@@ -231,9 +306,10 @@ body {
         overflow: visible;
         border-right: none;
         white-space: normal;
+        animation: none;
     }
 
-    :root {
-        --color-primary-text: hsl(228, 48%, 6%);
+    .app-main {
+        padding-bottom: 0;
     }
 }

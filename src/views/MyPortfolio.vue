@@ -14,7 +14,7 @@ const currentY = ref<number>(0);
 const onScroll = () => currentY.value = window.scrollY;
 
 const isHeaderVisible = computed<boolean>(() => {
-  return currentY.value > 200
+  return currentY.value > 300;
 });
 
 onMounted(() => {
@@ -23,54 +23,46 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-  window.removeEventListener("scroll", onScroll, true)
+  window.removeEventListener("scroll", onScroll, true);
 });
 </script>
 
 <template>
-  <header id="app-header" v-if="isHeaderVisible">
-    <NavBar />
-  </header>
-  <main id="app-main">
+  <Transition name="navbar-slide">
+    <header v-if="isHeaderVisible" class="app-header">
+      <NavBar />
+    </header>
+  </Transition>
+
+  <main class="app-main">
     <ProfileHeader />
+
     <PageView v-for="(section, index) in sections" :key="index" :section="section" />
-    <ContactMe class="no-print" />
-    <div class="page no-print extra">
-      <p>Hey! Did you like my website?</p>
-      <p>You can try to build your own printable resume by using my web application!</p>
-      <div class="extra-action">
-        <RouterLink to="/build-resume">Try it now!</RouterLink>
-      </div>
-    </div>
+
+    <ContactMe />
+
   </main>
-  <footer id="app-footer">
+
+  <footer class="app-footer">
     <PageFooter />
   </footer>
 </template>
 
 <style scoped>
-#app-main {
-  padding-top: 5em;
-  padding-bottom: 5em;
+.app-main {
+  padding-bottom: 2em;
 }
 
-.extra {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  gap: 0.5em;
-  border: 1px solid var(--color-primary-text);
-  padding: 1em;
-
-  .extra-action {
-    text-align: end;
-  }
+/* Navbar slide transition */
+.navbar-slide-enter-active,
+.navbar-slide-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-@media (max-width: 1024px) {
-  #app-main {
-    padding-top: 2em;
-    padding-bottom: 5em;
-  }
+.navbar-slide-enter-from,
+.navbar-slide-leave-to {
+  opacity: 0;
+  transform: translateY(-100%);
 }
+
 </style>

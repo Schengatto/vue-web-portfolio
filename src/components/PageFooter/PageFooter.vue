@@ -7,67 +7,76 @@ const { userProfile } = storeToRefs(usePageStore());
 </script>
 
 <template>
-  <div class="page-footer__navbar">
-    <div class="page-footer__container">
-      <div class="page-footer__link" v-for="link in userProfile.externalLinks" :key="link.label">
-        <div class="page-footer__link__icon">
-          <AppIcon :name="link.icon" size="sm"></AppIcon>
-        </div>
-        <a :href="link.url" target="_blank">{{ link.label }}</a>
+  <div class="footer">
+    <div class="footer__inner">
+      <div class="footer__links">
+        <a v-for="link in userProfile.externalLinks"
+           :key="link.label"
+           :href="link.url"
+           target="_blank"
+           class="footer__link"
+        >
+          <AppIcon :name="link.icon" size="sm" />
+          <span>{{ link.label }}</span>
+        </a>
+      </div>
+      <div class="footer__copy">
+        &copy; {{ new Date().getFullYear() }} {{ userProfile.name }}
       </div>
     </div>
   </div>
 </template>
 
-<style scoped>
-.page-footer__navbar {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 1em;
-  color: #f2f2f2;
-}
+<style scoped lang="scss">
+.footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 2em;
 
-.page-footer__container {
-  margin: auto;
-  display: flex;
-  gap: 2em;
-}
+  &__inner {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
-a {
-  color: white;
-  font-variant: all-small-caps;
-}
+  &__links {
+    display: flex;
+    gap: 1.5em;
+  }
 
-a:hover {
-  color: var(--color-primary-text);
-}
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--white-a60);
+    text-decoration: none;
+    font-size: var(--text-xs);
+    font-weight: 500;
+    transition: color 0.3s ease;
 
-.page-footer__link {
-  display: flex;
-  gap: 0.5em;
-}
+    &:hover {
+      color: var(--color-primary-text);
+    }
+  }
 
-.page-footer__link__icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  min-width: 16px;
+  &__copy {
+    font-size: var(--text-xxs);
+    color: var(--color-text-muted);
+  }
 }
 
 @media (max-width: 1024px) {
-  .page-footer__navbar {
-    display: flex;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    gap: 2em;
-    justify-content: end;
-    padding: 1em;
-    color: #f2f2f2;
-    font-size: 10pt;
+  .footer {
+    &__inner {
+      flex-direction: column;
+      gap: 1em;
+      text-align: center;
+    }
+
+    &__links {
+      gap: 1em;
+    }
   }
 }
 </style>

@@ -21,43 +21,41 @@ const colorClass = computed<string>(() => `tag--${props.color}`);
 
 <style lang="scss" scoped>
 .tag {
-  display: flex;
+  display: inline-flex;
+  align-items: center;
   gap: 2px;
-  padding: 2px 4px;
-  border-radius: var(--radius-md);
-  font-size: var(--text-xs);
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-size: var(--text-xxs);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
 }
 
 .tag--white {
-  border: 1px solid #fafafa;
-  background: white;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: var(--white-a80);
+  background: transparent;
 }
 
 .tag--yellow {
   color: #F39300;
-  background-color: #FFEFBD;
-  padding: 6px 8px;
-
-  svg {
-    margin-right: 6px;
-  }
+  background-color: rgba(243, 147, 0, 0.1);
+  border: 1px solid rgba(243, 147, 0, 0.2);
 }
 
 .tag--green {
   color: var(--color-primary-text);
-  border: 1px solid var(--color-primary-text);
-  padding: 6px 8px;
-
-  svg {
-    margin-right: 6px;
-  }
+  background-color: var(--color-primary-glow);
+  border: 1px solid hsla(160, 87%, 47%, 0.2);
 }
 
-/* override styles when printing */
 @media print {
   .tag {
     border: none !important;
+    background: none !important;
     padding: 0 !important;
+    font-size: 11px;
     &:not(:last-child)::after {
       content: ",";
     }

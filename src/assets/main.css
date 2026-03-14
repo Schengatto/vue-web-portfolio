@@ -3,7 +3,7 @@
 a, .green {
     text-decoration: none;
     color: var(--color-primary-text);
-    transition: 0.4s;
+    transition: color 0.3s ease, opacity 0.3s ease;
 }
 
 @media (hover: hover) {
@@ -17,12 +17,31 @@ a, .green {
 }
 
 .paragraph-title {
-    border-bottom: 1px solid var(--color-primary-text);
-    font-variant: small-caps;
+    font-size: var(--text-xxl);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--white);
+    margin-bottom: 1em;
+    position: relative;
+    padding-bottom: 0.5em;
+}
+
+.paragraph-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary-text), transparent);
+    border-radius: 2px;
 }
 
 .paragraph-content {
-    margin-top: 0.5em;
+    margin-top: 0.75em;
+    color: var(--white-a80);
+    line-height: 1.8;
+    font-size: var(--text-sm);
 }
 
 .clickable {
@@ -33,10 +52,48 @@ a, .green {
     min-width: 300px;
 }
 
-/* override styles when printing */
+/* Selection color */
+::selection {
+    background: hsla(160, 87%, 47%, 0.3);
+    color: var(--white);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Print overrides */
 @media print {
     .paragraph-title {
         border-bottom: 1px solid var(--color-primary-text);
-        font-size: 28px;
+        font-size: 16px;
+        color: #000;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.3em;
+    }
+
+    .paragraph-title::after {
+        display: none;
+    }
+
+    .paragraph-content {
+        font-size: 11px;
+        color: #333;
+        line-height: 1.5;
+        margin-top: 0.3em;
     }
 }

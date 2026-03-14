@@ -19,15 +19,13 @@ const linkClass = props.item?.link ? "clickable" : "";
 </script>
 
 <template>
-  <div :class="['item', linkClass ]">
+  <div :class="['card-item', linkClass]">
     <BaseCard :tags="item.tags" @click="visitLink(item.link)">
       <template #content>
-        <div class="item-content">
-          <div class="d-flex">
-            <div class="item-title">{{ item.title }}</div>
-          </div>
-          <div v-if="item.subtitle" class="item-subtitle">{{ item.subtitle }}</div>
-          <div v-if="item.description" class="item-description">{{ item.description }}</div>
+        <div class="card-item__content">
+          <h3 class="card-item__title">{{ item.title }}</h3>
+          <div v-if="item.subtitle" class="card-item__subtitle">{{ item.subtitle }}</div>
+          <div v-if="item.description" class="card-item__description">{{ item.description }}</div>
         </div>
       </template>
     </BaseCard>
@@ -35,40 +33,34 @@ const linkClass = props.item?.link ? "clickable" : "";
 </template>
 
 <style scoped lang="scss">
-.item-content {
+.card-item__content {
   display: flex;
   flex-direction: column;
   gap: 0.5em;
 }
 
-.item-title {
-  font-size: 32px;
+.card-item__title {
+  font-size: var(--text-xl);
+  font-weight: 600;
   color: var(--color-primary-text);
+  letter-spacing: -0.01em;
 }
 
-.item-subtitle {
-  font-weight: bold;
+.card-item__subtitle {
+  font-weight: 500;
+  color: var(--white-a80);
+  font-size: var(--text-sm);
 }
 
-.item-description {
-  font-style: italic;
+.card-item__description {
+  color: var(--white-a60);
+  font-size: var(--text-xs);
+  line-height: 1.7;
 }
 
-.item-tags {
-  display: flex;
-  gap: 0.5em;
-  flex-wrap: wrap;
-}
-
-.item-link {
-  cursor: pointer;
-  margin: 0 0.5em;
-}
-
-/* override styles when printing */
 @media print {
-  .item-title {
-    font-size: 24px !important;
+  .card-item__title {
+    font-size: 18px !important;
   }
 }
 </style>

@@ -155,11 +155,11 @@ export const projectPage: PageSection = {
             link: "https://libre-tube.netlify.app"
         },
         {
-            title: "Gazzetta dei Mercati",
+            title: "MARKETS GAZETTE",
             subtitle: "Online Newspaper",
-            description: "An experimental project built with n8n that processes hundreds of RSS feeds daily, using AI to generate a financial journal where news is classified as positive, negative, or neutral, with potential market impact.",
+            description: "Project aimed at aggregating information from multiple RSS feeds, classifying it by asset, sentiment, and relevance, and assessing the potential impact on the financial market.",
             tags: ["Finance", "AI", "N8N", "Nuxt"],
-            link: "https://financial-newspaper.netlify.app"
+            link: "https://finance.schengatto.cloud"
         },
         {
             title: "Value Investing School",

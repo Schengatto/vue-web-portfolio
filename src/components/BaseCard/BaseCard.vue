@@ -4,7 +4,7 @@
       <slot name="content"/>
     </div>
 
-    <div class="d-flex card__tags">
+    <div v-if="tags?.length" class="card__tags">
       <Tag v-for="(tag, index) in tags" :key="index" color="green">{{ tag }}</Tag>
     </div>
   </div>
@@ -33,61 +33,51 @@ const handleCardClick = () => {
 </script>
 
 <style lang="scss">
-
-$image-height: 320px;
-
 .card {
   display: flex;
   flex-direction: column;
   flex: 1;
   overflow: hidden;
-  border: 1px solid var(--color-primary-text);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card) 0 4px 16px 0;
   position: relative;
   height: 100%;
+  transition: all 0.3s ease;
 
-  &__image-wrapper {
-    position: relative;
-  }
-
-  &__image {
-    height: #{$image-height};
-    border-radius: var(--radius-md) var(--radius-md) 0 0;
-    overflow: hidden;
+  &:hover {
+    background: var(--glass-bg-hover);
+    border-color: rgba(255, 255, 255, 0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   }
 
   &__tags {
-    position: absolute;
-    justify-content: end;
-    top: var(--space-sm);
-    left: var(--space-sm);
-    width: calc(100% - 2 * var(--space-sm));
     display: flex;
     flex-wrap: wrap;
-    gap: 4px;
+    gap: 6px;
+    padding: 0 24px 20px;
   }
 
   &__content {
-    align-items: center;
-    justify-content: space-between;
-    padding: 48px 28px;
-    align-self: stretch;
+    padding: 28px 24px 16px;
+    flex: 1;
   }
 }
 
-/* override styles when printing */
 @media print {
   .card {
     border: none;
     border-radius: 0;
+    background: transparent;
+
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
 
     &__tags {
-      position: relative;
-      top: auto;
-      bottom: auto;
-      left: auto;
-      justify-content: start;
+      padding: 0;
       margin-top: 0.5em;
       gap: 4px;
     }
