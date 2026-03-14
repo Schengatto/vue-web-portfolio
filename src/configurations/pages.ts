@@ -120,8 +120,8 @@ export const mentorship: PageSection = {
             tags: ["Beginner", "Backend", "Code"],
         },
         {
-            title: "Nuxt 3 & Vue 3",
-            description: "Developing applications with Vue 3 using Nuxt 3 for server-side rendering and SEO",
+            title: "Nuxt & Vue",
+            description: "Developing applications with Vue 3 using Nuxt 4 for server-side rendering and SEO",
             tags: ["Beginner", "Frontend", "Code"],
         },
         {
