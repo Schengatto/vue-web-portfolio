@@ -141,6 +141,13 @@ export const projectPage: PageSection = {
     ],
     cardItems: [
         {
+            title: "Git Expansions",
+            subtitle: "Desktop Application",
+            description: "A cross-platform Git GUI desktop application inspired by GitExtensions, featuring interactive commit graph visualization, line-level staging, interactive rebase with drag-and-drop, and a dockable panel layout system.",
+            tags: ["Electron", "React", "TypeScript", "Vite"],
+            link: "https://github.com/Schengatto/git-expansion"
+        },
+        {
             title: "Funny Cards",
             subtitle: "Birthday Cards Creator",
             description: "A Nuxt 4 application for creating and sharing personalized animated birthday cards with interactive mini-games, featuring a wizard-based editor and Web Audio API sound generation.",
