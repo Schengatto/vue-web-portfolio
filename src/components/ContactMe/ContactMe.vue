@@ -8,6 +8,8 @@ const { userProfile } = storeToRefs(usePageStore());
 const emailHref = `mailto:${userProfile.value.emailAddress}?subject=Get in touch`;
 const telegramContact = `https://t.me/${userProfile.value.telegram}`;
 
+const downloadCV = () => window.print();
+
 const sectionRef = ref<HTMLElement | null>(null);
 const isVisible = ref(false);
 let observer: IntersectionObserver | null = null;
@@ -60,6 +62,21 @@ onBeforeUnmount(() => { observer?.disconnect(); });
             </div>
             <span class="contact__card-arrow">&rarr;</span>
           </a>
+
+          <button class="contact__card contact__card--cv no-print" @click="downloadCV">
+            <div class="contact__card-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+            </div>
+            <div class="contact__card-info">
+              <span class="contact__card-label">Resume</span>
+              <span class="contact__card-value">Download CV</span>
+            </div>
+            <span class="contact__card-arrow">&rarr;</span>
+          </button>
         </div>
 
         <!-- Contact form -->
@@ -215,6 +232,12 @@ onBeforeUnmount(() => { observer?.disconnect(); });
     transform: translateX(-6px);
     transition: all 0.3s ease;
     flex-shrink: 0;
+  }
+
+  &__card--cv {
+    font-family: var(--font-sans);
+    cursor: pointer;
+    text-align: left;
   }
 
   // --- Form ---

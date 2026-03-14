@@ -6,8 +6,6 @@ import AppIcon from "@/components/AppIcon/AppIcon.vue";
 
 const { userProfile, links } = storeToRefs(usePageStore());
 
-const downloadCV = () => window.print();
-
 onMounted(() => {
   if (userProfile.value.photoUrl) {
     const linkElement = document.createElement('link');
@@ -38,15 +36,6 @@ onMounted(() => {
             <AppIcon :name="link.icon" size="sm" />
           </a>
         </div>
-
-        <button class="hero__cv-button no-print" @click="downloadCV">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-              <polyline points="7 10 12 15 17 10"/>
-              <line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Download CV
-          </button>
 
         <nav class="hero__nav no-print">
           <a v-for="(link, index) in links" :key="index" :href="link.to" class="hero__nav-link">
@@ -136,30 +125,6 @@ onMounted(() => {
         color: var(--color-primary-text);
         transform: translateY(-2px);
       }
-    }
-  }
-
-  &__cv-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5em;
-    padding: 0.7em 1.5em;
-    background: transparent;
-    color: var(--color-primary-text);
-    border: 1px solid var(--color-primary-text);
-    border-radius: var(--radius-sm);
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    font-weight: 500;
-    letter-spacing: 0.02em;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    align-self: flex-start;
-    margin-bottom: 1em;
-
-    &:hover {
-      background: var(--color-primary-glow);
-      box-shadow: 0 0 20px hsla(160, 87%, 47%, 0.15);
     }
   }
 
