@@ -52,7 +52,7 @@ export const experiences: PageSection = {
             tags: ["Java", "Spring Framework", "C#", ".NET", "Typescript", "Node", "Vue", "Nuxt", "Jester", "Vitest", "Cypress", "Datadog", "Contentful", "AWS cloud", "Terraform", "Mentorship"],
         },
         {
-            title: "2024-... | Libre Capital",
+            title: "2024-... | KAIO Labs",
             subtitle: "Senior Software Engineer | Tech Lead",
             description: "Led development and technical teams for the frontend and backend components of the Libre Capital platform, overseeing architecture, implementation, and delivery of scalable, high-quality solutions.",
             tags: ["Typescript", "Node", "Next.js", "Nest.js", "Cypress", "Synpress", "AWS cloud", "Web3 integration"],
@@ -141,11 +141,18 @@ export const projectPage: PageSection = {
     ],
     cardItems: [
         {
+            title: "Funny Cards",
+            subtitle: "Birthday Cards Creator",
+            description: "A Nuxt 4 application for creating and sharing personalized animated birthday cards with interactive mini-games, featuring a wizard-based editor and Web Audio API sound generation.",
+            tags: ["Nuxt 4"],
+            link: "https://funny-cards.netlify.app"
+        },
+        {
             title: "Libre Tube",
             subtitle: "Free Youtube Player",
             description: "A Progressive Web App that lets users search and play YouTube videos without any advertising interruptions, with the ability to manage a personalized list of favorite channels.",
             tags: ["Youtube", "Vue 3"],
-            link: "https://libre-tube.netlify.app/"
+            link: "https://libre-tube.netlify.app"
         },
         {
             title: "Gazzetta dei Mercati",
@@ -155,7 +162,7 @@ export const projectPage: PageSection = {
             link: "https://financial-newspaper.netlify.app"
         },
         {
-            title: "Value Investing Analytics",
+            title: "Value Investing School",
             subtitle: "Web Application",
             description: "A personal project that analyzes over 400 companies based on value investing principles. An AI system is used to refine and enhance the data analysis process.",
             tags: ["Finance", "Express.js", "AI"],
