@@ -21,10 +21,10 @@ export const about: PageSection = {
     title: "About me",
     isPrintable: true,
     descriptions: [
-        `As a full-stack developer, I architect and build end-to-end solutions that bridge robust backend systems with polished, responsive front-end interfaces. My expertise spans from database design and API development to creating intuitive user experiences with modern frameworks.`,
-        `With a background in computer science and a strong analytical mindset, I approach every project by first understanding its core challenges and constraints. This methodical approach, combined with my commitment to staying at the forefront of emerging technologies, allows me to deliver solutions that are both innovative and maintainable. I have a particular passion for cloud architecture, performance optimization, and implementing clean, scalable code patterns.`,
-        `My passion for gaming goes beyond entertainment — it’s a source of technical inspiration that deeply influences my work. In my spare time, I develop game prototypes as practical laboratories to explore new technologies, design patterns, and optimization techniques. This blend of play and programming sharpens my problem-solving skills and brings a creative dimension to my professional projects.`,
-        `I believe the best software emerges from the intersection of technical excellence, creative problem-solving, and continuous experimentation. Whether optimizing database queries, crafting seamless UIs, or architecting distributed systems, I approach every challenge with curiosity and a drive to deliver elegant, efficient solutions that exceed expectations.`
+        `I’m a full-stack developer. I design and build complete solutions, from databases and APIs to user interfaces. I work with modern frameworks and I care about having a solid backend and a polished frontend.`,
+        `I have a computer science background and a very hands-on approach: before writing code, I always try to fully understand the problem and the project constraints. I keep up with new technologies and I’m particularly interested in cloud architectures, performance, and writing clean, maintainable code.`,
+        `In my spare time I build videogame prototypes. It’s my way of experimenting with new technologies, design patterns, and optimization techniques outside of my daily work. It helps me stay sharp when solving problems and brings some creativity into my professional projects too.`,
+        `I think the best software comes from a mix of technical skill, creativity, and a willingness to experiment. Whether it’s optimizing queries, building interfaces, or designing distributed systems, I tackle every challenge with curiosity and a focus on finding the simplest, most effective solution.`
     ],
 };
 
