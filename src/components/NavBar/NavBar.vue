@@ -2,6 +2,7 @@
 import {computed, ref} from "vue";
 import {usePageStore} from "@/stores/page";
 import {storeToRefs} from "pinia";
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher.vue";
 
 const {userProfile, links} = storeToRefs(usePageStore());
 const isMenuVisible = ref<boolean>(false);
@@ -34,6 +35,7 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
         <a v-for="(link, index) in links" :key="index" :href="link.to" class="navbar__link">
           {{ link.label }}
         </a>
+        <LanguageSwitcher />
       </nav>
     </div>
 
@@ -47,6 +49,9 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
         >
           {{ link.label }}
         </a>
+        <div class="navbar__mobile-lang">
+          <LanguageSwitcher />
+        </div>
       </div>
     </Transition>
   </div>
@@ -208,6 +213,10 @@ const isOpenClass = computed<string>(() => isMenuVisible.value ? "is-open" : "")
       left: 0;
       width: 100%;
       height: calc(100vh - 60px);
+    }
+
+    &__mobile-lang {
+      padding: 1.5em 0;
     }
 
     &__mobile-link {

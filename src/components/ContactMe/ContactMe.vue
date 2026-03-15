@@ -2,8 +2,10 @@
 import { onMounted, onBeforeUnmount, ref } from "vue";
 import { usePageStore } from "@/stores/page";
 import { storeToRefs } from "pinia";
+import { useI18n } from "vue-i18n";
 import AppIcon from "@/components/AppIcon/AppIcon.vue";
 
+const { t } = useI18n();
 const { userProfile } = storeToRefs(usePageStore());
 const emailHref = `mailto:${userProfile.value.emailAddress}?subject=Get in touch`;
 const telegramContact = `https://t.me/${userProfile.value.telegram}`;
@@ -34,8 +36,8 @@ onBeforeUnmount(() => { observer?.disconnect(); });
   <section ref="sectionRef" id="contact-me" :class="['contact', { 'contact--visible': isVisible }]">
     <div class="contact__inner">
       <div class="contact__header">
-        <h2 class="contact__title">Let's work together</h2>
-        <p class="contact__subtitle">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+        <h2 class="contact__title">{{ t("ui.contactTitle") }}</h2>
+        <p class="contact__subtitle">{{ t("ui.contactSubtitle") }}</p>
       </div>
 
       <div class="contact__grid">
@@ -46,7 +48,7 @@ onBeforeUnmount(() => { observer?.disconnect(); });
               <AppIcon name="Gmail" size="md" />
             </div>
             <div class="contact__card-info">
-              <span class="contact__card-label">Email</span>
+              <span class="contact__card-label">{{ t("ui.email") }}</span>
               <span class="contact__card-value">{{ userProfile.emailAddress }}</span>
             </div>
             <span class="contact__card-arrow">&rarr;</span>
@@ -57,7 +59,7 @@ onBeforeUnmount(() => { observer?.disconnect(); });
               <AppIcon name="Telegram" size="md" />
             </div>
             <div class="contact__card-info">
-              <span class="contact__card-label">Telegram</span>
+              <span class="contact__card-label">{{ t("ui.telegram") }}</span>
               <span class="contact__card-value">@{{ userProfile.telegram }}</span>
             </div>
             <span class="contact__card-arrow">&rarr;</span>
@@ -72,8 +74,8 @@ onBeforeUnmount(() => { observer?.disconnect(); });
               </svg>
             </div>
             <div class="contact__card-info">
-              <span class="contact__card-label">Resume</span>
-              <span class="contact__card-value">Download CV</span>
+              <span class="contact__card-label">{{ t("ui.resume") }}</span>
+              <span class="contact__card-value">{{ t("ui.downloadCv") }}</span>
             </div>
             <span class="contact__card-arrow">&rarr;</span>
           </button>
@@ -81,20 +83,20 @@ onBeforeUnmount(() => { observer?.disconnect(); });
 
         <!-- Contact form -->
         <div class="contact__form-wrapper">
-          <h3 class="contact__form-title">Send a message</h3>
+          <h3 class="contact__form-title">{{ t("ui.sendMessage") }}</h3>
           <form class="contact__form" :action="userProfile.emailEndpoint" method="POST">
             <div class="contact__field">
-              <label for="sender" class="contact__label">Email</label>
-              <input id="sender" type="email" name="email" placeholder="you@example.com" required class="contact__input">
+              <label for="sender" class="contact__label">{{ t("ui.email") }}</label>
+              <input id="sender" type="email" name="email" :placeholder="t('ui.emailPlaceholder')" required class="contact__input">
             </div>
 
             <div class="contact__field">
-              <label for="message" class="contact__label">Message</label>
-              <textarea id="message" name="message" placeholder="Tell me about your project, timeline, and goals..." required rows="5" class="contact__textarea"></textarea>
+              <label for="message" class="contact__label">{{ t("ui.message") }}</label>
+              <textarea id="message" name="message" :placeholder="t('ui.messagePlaceholder')" required rows="5" class="contact__textarea"></textarea>
             </div>
 
             <button class="contact__submit" type="submit">
-              <span>Send Message</span>
+              <span>{{ t("ui.sendButton") }}</span>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"></line>
                 <polyline points="12 5 19 12 12 19"></polyline>

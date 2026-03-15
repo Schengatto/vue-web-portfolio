@@ -2,8 +2,11 @@
 import { usePageStore } from "@/stores/page";
 import { storeToRefs } from "pinia";
 import { onMounted } from "vue";
+import { useI18n } from "vue-i18n";
 import AppIcon from "@/components/AppIcon/AppIcon.vue";
+import LanguageSwitcher from "@/components/LanguageSwitcher/LanguageSwitcher.vue";
 
+const { t } = useI18n();
 const { userProfile, links } = storeToRefs(usePageStore());
 
 onMounted(() => {
@@ -21,7 +24,7 @@ onMounted(() => {
   <section class="hero">
     <div class="hero__content">
       <div class="hero__text">
-        <p class="hero__greeting">Hello, I'm</p>
+        <p class="hero__greeting">{{ t("ui.greeting") }}</p>
         <h1 class="hero__name">{{ userProfile.name }}</h1>
         <h2 class="hero__role typewriter">{{ userProfile.role }}</h2>
 
@@ -35,6 +38,10 @@ onMounted(() => {
           >
             <AppIcon :name="link.icon" size="sm" />
           </a>
+        </div>
+
+        <div class="hero__actions no-print">
+          <LanguageSwitcher />
         </div>
 
         <nav class="hero__nav no-print">
@@ -126,6 +133,10 @@ onMounted(() => {
         transform: translateY(-2px);
       }
     }
+  }
+
+  &__actions {
+    margin-bottom: 1em;
   }
 
   &__nav {
