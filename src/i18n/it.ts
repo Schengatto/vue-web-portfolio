@@ -20,10 +20,10 @@ export default {
     about: {
         title: "Chi sono",
         descriptions: [
-            "Sono uno sviluppatore full-stack. Progetto e realizzo soluzioni complete, dai database e le API alle interfacce utente. Lavoro con framework moderni e mi interessa avere un backend solido e un frontend curato.",
-            "Ho una formazione in informatica e un approccio molto pratico: prima di scrivere codice, cerco sempre di comprendere a fondo il problema e i vincoli del progetto. Mi tengo aggiornato sulle nuove tecnologie e sono particolarmente interessato alle architetture cloud, alle performance e alla scrittura di codice pulito e manutenibile.",
-            "Nel tempo libero costruisco prototipi di videogiochi. È il mio modo di sperimentare con nuove tecnologie, design pattern e tecniche di ottimizzazione al di fuori del lavoro quotidiano. Mi aiuta a restare reattivo nella risoluzione dei problemi e porta un po' di creatività anche nei miei progetti professionali.",
-            "Credo che il miglior software nasca da un mix di competenza tecnica, creatività e voglia di sperimentare. Che si tratti di ottimizzare query, costruire interfacce o progettare sistemi distribuiti, affronto ogni sfida con curiosità e con l'obiettivo di trovare la soluzione più semplice ed efficace.",
+            "Sono uno sviluppatore full-stack e mi piace avere il quadro completo: mi occupo di tutto, dalla struttura del database fino all'interfaccia utente, perché lavorare su tutto lo stack mi permette di seguire un problema dall'inizio alla fine.",
+            "Ho studiato informatica, ma nel lavoro di tutti i giorni mi considero prima di tutto qualcuno che risolve problemi: prima di scrivere codice cerco di capire davvero cosa stiamo costruendo e perché, quali sono i vincoli reali e dove si nasconde la vera complessità. Sono particolarmente attratto dall'architettura cloud, dalle performance e dal codice pulito, quello che si legge ancora bene sei mesi dopo averlo scritto.",
+            "Nel tempo libero costruisco prototipi e side projects, principalmente come scusa per provare nuove tecnologie e ragionare su problemi diversi da quelli del lavoro. È un modo per restare curioso e tenere allenata la capacità di trovare soluzioni creative, cosa che finisce quasi sempre per tornarmi utile anche nei progetti professionali.",
+            "Credo che il software migliore sia quasi sempre più semplice di quello che viene in mente per primo, e che la vera abilità stia nel resistere alla tentazione di aggiungere complessità prima che sia davvero necessaria. Che si tratti di ottimizzare una query, definire un'API o progettare un sistema distribuito, cerco sempre la soluzione che soddisfa meglio il requisito con particolare attenzione sulla leggibilità del codice.",
         ],
     },
     experiences: {
@@ -109,7 +109,7 @@ export default {
         description: "Questa è una lista di piccoli progetti personali a cui ho lavorato nel tempo libero studiando nuove tecnologie.",
         items: [
             {
-                title: "Git Expansions",
+                title: "Git Expansion",
                 subtitle: "Applicazione Desktop",
                 description: "Un'applicazione desktop Git GUI cross-platform ispirata a GitExtensions, con visualizzazione interattiva del grafo dei commit, staging a livello di riga, rebase interattivo con drag-and-drop e un sistema di pannelli agganciabili.",
             },

@@ -20,10 +20,10 @@ export default {
     about: {
         title: "About me",
         descriptions: [
-            "I'm a full-stack developer. I design and build complete solutions, from databases and APIs to user interfaces. I work with modern frameworks and I care about having a solid backend and a polished frontend.",
-            "I have a computer science background and a very hands-on approach: before writing code, I always try to fully understand the problem and the project constraints. I keep up with new technologies and I'm particularly interested in cloud architectures, performance, and writing clean, maintainable code.",
-            "In my spare time I build videogame prototypes. It's my way of experimenting with new technologies, design patterns, and optimization techniques outside of my daily work. It helps me stay sharp when solving problems and brings some creativity into my professional projects too.",
-            "I think the best software comes from a mix of technical skill, creativity, and a willingness to experiment. Whether it's optimizing queries, building interfaces, or designing distributed systems, I tackle every challenge with curiosity and a focus on finding the simplest, most effective solution.",
+            "I'm a full-stack developer and I like having the full picture: I handle everything from the database structure to the user interface, because working across the whole stack lets me follow a problem from start to finish without having to hand it off halfway through.",
+            "I studied computer science, but in my day-to-day work I think of myself as a problem-solver first: before writing code I try to really understand what we're building and why, what the real constraints are, and where the actual complexity hides. I'm particularly drawn to cloud architecture, performance, and clean code — the kind that's still easy to read six months after it was written.",
+            "In my spare time I build prototypes and side projects, mostly as an excuse to try out new technologies and think through problems that are different from the ones I deal with at work. It's a way to stay curious and keep the creative problem-solving instincts sharp, which almost always ends up being useful in professional projects too.",
+            "I believe the best software is almost always simpler than what first comes to mind, and that the real skill lies in resisting the urge to add complexity before it's truly needed. Whether it's optimizing a query, defining an API, or designing a distributed system, I always look for the solution that best satisfies the requirement with a particular focus on code readability.",
         ],
     },
     experiences: {
@@ -109,7 +109,7 @@ export default {
         description: "This is a list of small side projects I worked on in my spare time while studying new technologies.",
         items: [
             {
-                title: "Git Expansions",
+                title: "Git Expansion",
                 subtitle: "Desktop Application",
                 description: "A cross-platform Git GUI desktop application inspired by GitExtensions, featuring interactive commit graph visualization, line-level staging, interactive rebase with drag-and-drop, and a dockable panel layout system.",
             },
