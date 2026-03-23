@@ -44,7 +44,7 @@ const mentorshipTags = [
 const projectLinks = [
     "https://github.com/Schengatto/git-expansion",
     "https://funny-cards.netlify.app",
-    "https://libre-tube.netlify.app",
+    "https://tube-too.netlify.app/",
     "https://finance.schengatto.cloud",
     "https://value.schengatto.cloud",
     "https://finance-toolbox.it",
