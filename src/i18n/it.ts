@@ -109,7 +109,7 @@ export default {
         description: "Questa è una lista di piccoli progetti personali a cui ho lavorato nel tempo libero studiando nuove tecnologie.",
         items: [
             {
-                title: "Git Expansion",
+                title: "GitSmith",
                 subtitle: "Applicazione Desktop",
                 description: "Un'applicazione desktop Git GUI cross-platform ispirata a GitExtensions, con visualizzazione interattiva del grafo dei commit, staging a livello di riga, rebase interattivo con drag-and-drop e un sistema di pannelli agganciabili.",
             },
@@ -119,7 +119,7 @@ export default {
                 description: "Un'applicazione Nuxt 4 per creare e condividere biglietti di auguri animati e personalizzati con mini-giochi interattivi, un editor basato su wizard e generazione audio tramite Web Audio API.",
             },
             {
-                title: "Libre Tube",
+                title: "Tube-too",
                 subtitle: "Player Youtube Gratuito",
                 description: "Una Progressive Web App che permette di cercare e riprodurre video YouTube senza interruzioni pubblicitarie, con la possibilità di gestire una lista personalizzata di canali preferiti.",
             },

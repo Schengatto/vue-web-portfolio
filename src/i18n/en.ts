@@ -109,7 +109,7 @@ export default {
         description: "This is a list of small side projects I worked on in my spare time while studying new technologies.",
         items: [
             {
-                title: "Git Expansion",
+                title: "GitSmith",
                 subtitle: "Desktop Application",
                 description: "A cross-platform Git GUI desktop application inspired by GitExtensions, featuring interactive commit graph visualization, line-level staging, interactive rebase with drag-and-drop, and a dockable panel layout system.",
             },
@@ -119,7 +119,7 @@ export default {
                 description: "A Nuxt 4 application for creating and sharing personalized animated birthday cards with interactive mini-games, featuring a wizard-based editor and Web Audio API sound generation.",
             },
             {
-                title: "Libre Tube",
+                title: "Tube-too",
                 subtitle: "Free Youtube Player",
                 description: "A Progressive Web App that lets users search and play YouTube videos without any advertising interruptions, with the ability to manage a personalized list of favorite channels.",
             },
